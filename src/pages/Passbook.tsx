@@ -47,7 +47,7 @@ export default function Passbook() {
 <!DOCTYPE html>
 <html>
 <head>
-<title>SecureVault Bank - Passbook</title>
+<title>Finova Bank - Passbook</title>
 <style>
   @page { margin: 20mm; }
   body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; margin: 0; padding: 0; }
