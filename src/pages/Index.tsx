@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Shield, Users, ArrowRight } from "lucide-react";
+import finovaLogo from "@/assets/finova-logo.png";
 
 export default function Index() {
   const navigate = useNavigate();
@@ -7,9 +8,7 @@ export default function Index() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
       <div className="w-full max-w-2xl animate-fade-in text-center">
-        <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-2xl mb-5 shadow-lg">
-          SV
-        </div>
+        <img src={finovaLogo} alt="Finova Bank" className="h-24 w-auto mx-auto mb-5" />
         <h1 className="text-3xl font-bold text-foreground tracking-tight mb-2" style={{ lineHeight: "1.1" }}>
           Finova Bank
         </h1>
@@ -18,7 +17,6 @@ export default function Index() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-lg mx-auto">
-          {/* Customer Card */}
           <button
             onClick={() => navigate("/login/customer")}
             className="group relative flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-primary/40 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -35,7 +33,6 @@ export default function Index() {
             <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
           </button>
 
-          {/* Admin Card */}
           <button
             onClick={() => navigate("/login/admin")}
             className="group relative flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-primary/40 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

@@ -49,7 +49,7 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-lg animate-fade-in">
         <div className="text-center mb-6">
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-xl mb-3">SV</div>
+          <img src={finovaLogo} alt="Finova Bank" className="h-16 w-auto mx-auto mb-3" />
           <h1 className="text-2xl font-bold">Create Account</h1>
           <p className="text-sm text-muted-foreground">Step {step} of 3</p>
           <div className="flex gap-1 mt-3 justify-center">

@@ -116,9 +116,7 @@ export default function Passbook() {
         <Card className="shadow-lg border-border/50 overflow-hidden">
           {/* Header band */}
           <div className="bg-primary px-6 py-4 flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-white/20 flex items-center justify-center text-primary-foreground font-bold text-sm">
-              SV
-            </div>
+            <img src={finovaLogo} alt="Finova Bank" className="h-10 w-auto" />
             <div>
               <p className="text-primary-foreground font-semibold text-sm">Finova Bank</p>
               <p className="text-primary-foreground/70 text-xs">Your Trusted Banking Partner</p>
