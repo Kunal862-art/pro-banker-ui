@@ -80,7 +80,7 @@ export default function Passbook() {
   <div class="stamp">Issued on: ${new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric" })}</div>
   <div class="footer">
     This is a computer-generated document and does not require a physical signature.<br/>
-    SecureVault Bank • IFSC: SVBL0001234 • CIN: U00000MH2025PLC000000
+    Finova Bank • IFSC: FNVA0001234 • CIN: U00000MH2025PLC000000
   </div>
 </body>
 </html>`;
