@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Download, LayoutDashboard } from "lucide-react";
 import { maskAadhaar, maskPAN } from "@/lib/banking-utils";
+import finovaLogo from "@/assets/finova-logo.png";
 
 export default function Passbook() {
   const [searchParams] = useSearchParams();
