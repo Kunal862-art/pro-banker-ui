@@ -107,9 +107,7 @@ export default function Passbook() {
 
         {!showSuccess && (
           <div className="text-center mb-6">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-lg mb-3">
-              SV
-            </div>
+            <img src={finovaLogo} alt="Finova Bank" className="h-14 w-auto mx-auto mb-3" />
             <h2 className="text-xl font-bold text-foreground">Digital Passbook</h2>
             <p className="text-sm text-muted-foreground">Finova Bank</p>
           </div>
