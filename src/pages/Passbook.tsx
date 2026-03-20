@@ -68,7 +68,7 @@ export default function Passbook() {
 </head>
 <body>
   <div class="header">
-    <div class="logo">SV</div>
+    <img class="logo" src="${window.location.origin}/finova-logo.png" alt="Finova Bank" />
     <div>
       <div class="bank-name">Finova Bank</div>
       <div class="bank-sub">Your Trusted Banking Partner</div>
