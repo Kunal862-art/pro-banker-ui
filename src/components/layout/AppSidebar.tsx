@@ -2,6 +2,7 @@ import {
   LayoutDashboard, ArrowDownToLine, ArrowUpFromLine, History, Landmark, PiggyBank,
   FileText, Shield, Users, Bell, LogOut, Menu, ChevronRight,
 } from "lucide-react";
+import finovaLogo from "@/assets/finova-logo.png";
 import { NavLink } from "@/components/NavLink";
 import { useAuth } from "@/contexts/AuthContext";
 import {
