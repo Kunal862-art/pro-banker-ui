@@ -1,16 +1,62 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useNavigate } from "react-router-dom";
+import { Shield, Users, ArrowRight } from "lucide-react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+export default function Index() {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
+      <div className="w-full max-w-2xl animate-fade-in text-center">
+        <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-2xl mb-5 shadow-lg">
+          SV
+        </div>
+        <h1 className="text-3xl font-bold text-foreground tracking-tight mb-2" style={{ lineHeight: "1.1" }}>
+          SecureVault Bank
+        </h1>
+        <p className="text-muted-foreground mb-10">
+          Select your role to continue
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-lg mx-auto">
+          {/* Customer Card */}
+          <button
+            onClick={() => navigate("/login/customer")}
+            className="group relative flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-primary/40 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <Users className="h-7 w-7" />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-foreground mb-1">Customer</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Access your account, deposits, loans & more
+              </p>
+            </div>
+            <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+          </button>
+
+          {/* Admin Card */}
+          <button
+            onClick={() => navigate("/login/admin")}
+            className="group relative flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-200 hover:shadow-md hover:border-primary/40 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/80 text-accent-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <Shield className="h-7 w-7" />
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-foreground mb-1">Administrator</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Manage users, approve loans & monitor activity
+              </p>
+            </div>
+            <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+          </button>
+        </div>
+
+        <p className="text-xs text-muted-foreground mt-8">
+          Secure • Reliable • Trusted Banking
+        </p>
+      </div>
     </div>
   );
-};
-
-const Index = PlaceholderIndex;
-
-export default Index;
+}

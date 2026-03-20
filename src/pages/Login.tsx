@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Lock, User, AlertCircle, Eye, EyeOff } from "lucide-react";
+import { Lock, User, AlertCircle, Eye, EyeOff, Shield, Users } from "lucide-react";
 
 export default function Login() {
+  const { role } = useParams<{ role: string }>();
+  const isAdmin = role === "admin";
   const [accountNumber, setAccountNumber] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -24,7 +26,7 @@ export default function Login() {
       const result = login(accountNumber, password);
       setLoading(false);
       if (result.success) {
-        navigate("/dashboard");
+        navigate(isAdmin ? "/admin" : "/dashboard");
       } else {
         setError(result.message);
       }
@@ -39,12 +41,17 @@ export default function Login() {
             SV
           </div>
           <h1 className="text-2xl font-bold text-foreground">SecureVault Bank</h1>
-          <p className="text-sm text-muted-foreground mt-1">Sign in to your banking account</p>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            {isAdmin ? <Shield className="h-4 w-4 text-primary" /> : <Users className="h-4 w-4 text-primary" />}
+            <p className="text-sm text-muted-foreground">
+              {isAdmin ? "Administrator Login" : "Customer Login"}
+            </p>
+          </div>
         </div>
 
         <Card className="shadow-lg border-border/50">
           <CardHeader className="pb-4">
-            <CardTitle className="text-lg">Login</CardTitle>
+            <CardTitle className="text-lg">Sign In</CardTitle>
             <CardDescription>Enter your account number and password</CardDescription>
           </CardHeader>
           <CardContent>
@@ -76,14 +83,16 @@ export default function Login() {
                 {loading ? "Signing in..." : "Sign In"}
               </Button>
             </form>
-            <p className="text-center text-sm text-muted-foreground mt-4">
-              Don't have an account?{" "}
-              <Link to="/register" className="text-primary hover:underline font-medium">Register here</Link>
-            </p>
-            <div className="mt-4 p-3 rounded-lg bg-muted text-xs text-muted-foreground space-y-1">
-              <p className="font-medium text-foreground">Demo Credentials:</p>
-              <p>Customer: 202500000001 / Demo@1234</p>
-              <p>Admin: 100000000001 / Admin@1234</p>
+            {!isAdmin && (
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                Don't have an account?{" "}
+                <Link to="/register" className="text-primary hover:underline font-medium">Register here</Link>
+              </p>
+            )}
+            <div className="text-center mt-3">
+              <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                ← Back to role selection
+              </Link>
             </div>
           </CardContent>
         </Card>

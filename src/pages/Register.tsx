@@ -2,18 +2,17 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { validatePAN, validateAadhaar, validatePassword } from "@/lib/banking-utils";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { AlertCircle, CheckCircle2 } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 
 export default function Register() {
   const [step, setStep] = useState(1);
   const [form, setForm] = useState({ fullName: "", age: "", gender: "", address: "", phone: "", email: "", pan: "", aadhaar: "", occupation: "", salary: "", password: "", confirmPassword: "" });
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const { register } = useAuth();
   const navigate = useNavigate();
 
@@ -40,25 +39,10 @@ export default function Register() {
     if (form.password !== form.confirmPassword) { setError("Passwords do not match"); return; }
     const result = register({ fullName: form.fullName, age: parseInt(form.age), gender: form.gender, address: form.address, phone: form.phone, email: form.email, pan: form.pan, aadhaar: form.aadhaar.replace(/\s/g, ""), occupation: form.occupation, salary: parseInt(form.salary) }, form.password);
     if (result.success) {
-      setSuccess(`Account created! Your account number is: ${result.accountNumber}`);
-      setTimeout(() => navigate("/"), 3000);
+      // Navigate to passbook page with the new account number
+      navigate(`/passbook?account=${result.accountNumber}`);
     }
   };
-
-  if (success) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        <Card className="w-full max-w-md animate-fade-in shadow-lg">
-          <CardContent className="pt-8 pb-8 text-center space-y-4">
-            <CheckCircle2 className="h-16 w-16 text-success mx-auto" />
-            <h2 className="text-xl font-bold">Registration Successful!</h2>
-            <p className="text-sm text-muted-foreground">{success}</p>
-            <p className="text-xs text-muted-foreground">Redirecting to login...</p>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
@@ -130,7 +114,7 @@ export default function Register() {
             )}
 
             <p className="text-center text-sm text-muted-foreground mt-4">
-              Already have an account? <Link to="/" className="text-primary hover:underline font-medium">Sign in</Link>
+              Already have an account? <Link to="/login/customer" className="text-primary hover:underline font-medium">Sign in</Link>
             </p>
           </CardContent>
         </Card>
