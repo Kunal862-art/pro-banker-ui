@@ -103,7 +103,7 @@ const initialUsers: User[] = [
     balance: 920000, role: "customer", isBlocked: false, failedAttempts: 0, createdAt: "2024-06-20",
   },
   {
-    id: "admin", accountNumber: "100000000001", fullName: "Admin User", email: "admin@securevault.com",
+    id: "admin", accountNumber: "100000000001", fullName: "Admin User", email: "admin@finovabank.com",
     phone: "9000000000", age: 40, gender: "Male", address: "HQ, Mumbai",
     pan: "ADMIN0000A", aadhaar: "000000000000", occupation: "Bank Manager", salary: 250000,
     balance: 0, role: "admin", isBlocked: false, failedAttempts: 0, createdAt: "2024-01-01",
