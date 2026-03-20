@@ -110,7 +110,7 @@ export default function Passbook() {
               SV
             </div>
             <h2 className="text-xl font-bold text-foreground">Digital Passbook</h2>
-            <p className="text-sm text-muted-foreground">SecureVault Bank</p>
+            <p className="text-sm text-muted-foreground">Finova Bank</p>
           </div>
         )}
 
