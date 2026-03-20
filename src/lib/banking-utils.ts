@@ -61,9 +61,3 @@ export function checkLoanEligibility(salary: number, requestedAmount: number): {
   }
   return { eligible: true, maxAmount, reason: "You are eligible for this loan" };
 }
-  const maxAmount = salary * 60;
-  if (requestedAmount > maxAmount) {
-    return { eligible: false, maxAmount, reason: `Maximum eligible amount is ${formatCurrency(maxAmount)} based on your salary` };
-  }
-  return { eligible: true, maxAmount, reason: "You are eligible for this loan" };
-}
