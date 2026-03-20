@@ -53,7 +53,7 @@ export default function Passbook() {
   @page { margin: 20mm; }
   body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; margin: 0; padding: 0; }
   .header { background: #1a1a2e; color: white; padding: 24px 32px; display: flex; align-items: center; gap: 16px; }
-  .logo { width: 48px; height: 48px; background: #3b82f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; color: white; }
+  .logo { height: 48px; width: auto; }
   .bank-name { font-size: 22px; font-weight: 700; }
   .bank-sub { font-size: 12px; opacity: 0.7; margin-top: 2px; }
   .title { text-align: center; font-size: 16px; font-weight: 600; margin: 24px 0 16px; text-transform: uppercase; letter-spacing: 1px; color: #1a1a2e; border-bottom: 2px solid #3b82f6; display: inline-block; padding-bottom: 4px; }
