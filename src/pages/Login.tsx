@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Lock, User, AlertCircle, Eye, EyeOff, Shield, Users } from "lucide-react";
+import finovaLogo from "@/assets/finova-logo.png";
 
 export default function Login() {
   const { role } = useParams<{ role: string }>();
