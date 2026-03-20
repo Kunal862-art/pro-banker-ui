@@ -40,7 +40,7 @@ export default function Login() {
           <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-xl mb-4">
             SV
           </div>
-          <h1 className="text-2xl font-bold text-foreground">SecureVault Bank</h1>
+          <h1 className="text-2xl font-bold text-foreground">Finova Bank</h1>
           <div className="flex items-center justify-center gap-2 mt-2">
             {isAdmin ? <Shield className="h-4 w-4 text-primary" /> : <Users className="h-4 w-4 text-primary" />}
             <p className="text-sm text-muted-foreground">

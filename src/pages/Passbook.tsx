@@ -121,7 +121,7 @@ export default function Passbook() {
               SV
             </div>
             <div>
-              <p className="text-primary-foreground font-semibold text-sm">SecureVault Bank</p>
+              <p className="text-primary-foreground font-semibold text-sm">Finova Bank</p>
               <p className="text-primary-foreground/70 text-xs">Your Trusted Banking Partner</p>
             </div>
           </div>

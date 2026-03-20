@@ -44,8 +44,8 @@ export function AppSidebar() {
           </div>
           {!collapsed && (
             <div className="flex flex-col">
-              <span className="font-semibold text-sm text-sidebar-foreground">SecureVault</span>
-              <span className="text-[11px] text-sidebar-foreground/60">Banking System</span>
+              <span className="font-semibold text-sm text-sidebar-foreground">Finova Bank</span>
+              <span className="text-[11px] text-sidebar-foreground/60">Secure Banking System</span>
             </div>
           )}
         </div>

@@ -166,7 +166,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
     setUsers(prev => [...prev, newUser]);
     (passwords as any)[accountNumber] = password;
-    addNotification(newUser.id, "Welcome to SecureVault Bank! Your account has been created.", "success");
+    addNotification(newUser.id, "Welcome to Finova Bank! Your account has been created.", "success");
     return { success: true, accountNumber };
   }, [passwords, addNotification]);
 
