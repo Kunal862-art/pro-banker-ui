@@ -43,7 +43,24 @@ export function formatDate(date: Date | string): string {
   return new Intl.DateTimeFormat("en-IN", { day: "2-digit", month: "short", year: "numeric" }).format(new Date(date));
 }
 
+export function maskAadhaar(aadhaar: string): string {
+  const clean = aadhaar.replace(/\s/g, "");
+  if (clean.length !== 12) return aadhaar;
+  return `XXXX-XXXX-${clean.slice(-4)}`;
+}
+
+export function maskPAN(pan: string): string {
+  if (pan.length !== 10) return pan;
+  return `${pan.slice(0, 4)}XXXX${pan.slice(-1)}`;
+}
+
 export function checkLoanEligibility(salary: number, requestedAmount: number): { eligible: boolean; maxAmount: number; reason: string } {
+  const maxAmount = salary * 60;
+  if (requestedAmount > maxAmount) {
+    return { eligible: false, maxAmount, reason: `Maximum eligible amount is ${formatCurrency(maxAmount)} based on your salary` };
+  }
+  return { eligible: true, maxAmount, reason: "You are eligible for this loan" };
+}
   const maxAmount = salary * 60;
   if (requestedAmount > maxAmount) {
     return { eligible: false, maxAmount, reason: `Maximum eligible amount is ${formatCurrency(maxAmount)} based on your salary` };
