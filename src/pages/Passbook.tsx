@@ -32,7 +32,7 @@ export default function Passbook() {
     { label: "Account Holder", value: user.fullName },
     { label: "Account Number", value: user.accountNumber },
     { label: "Account Type", value: "Savings" },
-    { label: "IFSC Code", value: "SVBL0001234" },
+    { label: "IFSC Code", value: "FNVA0001234" },
     { label: "Mobile Number", value: user.phone },
     { label: "Email", value: user.email },
     { label: "Address", value: user.address },
