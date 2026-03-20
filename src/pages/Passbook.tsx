@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Download, LayoutDashboard } from "lucide-react";
 import { maskAadhaar, maskPAN } from "@/lib/banking-utils";
+import finovaLogo from "@/assets/finova-logo.png";
 
 export default function Passbook() {
   const [searchParams] = useSearchParams();
@@ -52,7 +53,7 @@ export default function Passbook() {
   @page { margin: 20mm; }
   body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; margin: 0; padding: 0; }
   .header { background: #1a1a2e; color: white; padding: 24px 32px; display: flex; align-items: center; gap: 16px; }
-  .logo { width: 48px; height: 48px; background: #3b82f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; color: white; }
+  .logo { height: 48px; width: auto; }
   .bank-name { font-size: 22px; font-weight: 700; }
   .bank-sub { font-size: 12px; opacity: 0.7; margin-top: 2px; }
   .title { text-align: center; font-size: 16px; font-weight: 600; margin: 24px 0 16px; text-transform: uppercase; letter-spacing: 1px; color: #1a1a2e; border-bottom: 2px solid #3b82f6; display: inline-block; padding-bottom: 4px; }
@@ -67,7 +68,7 @@ export default function Passbook() {
 </head>
 <body>
   <div class="header">
-    <div class="logo">SV</div>
+    <img class="logo" src="${window.location.origin}/finova-logo.png" alt="Finova Bank" />
     <div>
       <div class="bank-name">Finova Bank</div>
       <div class="bank-sub">Your Trusted Banking Partner</div>
@@ -106,9 +107,7 @@ export default function Passbook() {
 
         {!showSuccess && (
           <div className="text-center mb-6">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-lg mb-3">
-              SV
-            </div>
+            <img src={finovaLogo} alt="Finova Bank" className="h-14 w-auto mx-auto mb-3" />
             <h2 className="text-xl font-bold text-foreground">Digital Passbook</h2>
             <p className="text-sm text-muted-foreground">Finova Bank</p>
           </div>
@@ -117,9 +116,7 @@ export default function Passbook() {
         <Card className="shadow-lg border-border/50 overflow-hidden">
           {/* Header band */}
           <div className="bg-primary px-6 py-4 flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-white/20 flex items-center justify-center text-primary-foreground font-bold text-sm">
-              SV
-            </div>
+            <img src={finovaLogo} alt="Finova Bank" className="h-10 w-auto" />
             <div>
               <p className="text-primary-foreground font-semibold text-sm">Finova Bank</p>
               <p className="text-primary-foreground/70 text-xs">Your Trusted Banking Partner</p>

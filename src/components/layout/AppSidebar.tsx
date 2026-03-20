@@ -2,6 +2,7 @@ import {
   LayoutDashboard, ArrowDownToLine, ArrowUpFromLine, History, Landmark, PiggyBank,
   FileText, Shield, Users, Bell, LogOut, Menu, ChevronRight,
 } from "lucide-react";
+import finovaLogo from "@/assets/finova-logo.png";
 import { NavLink } from "@/components/NavLink";
 import { useAuth } from "@/contexts/AuthContext";
 import {
@@ -39,9 +40,7 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r-0">
       <SidebarHeader className="p-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground font-bold text-sm">
-            SV
-          </div>
+          <img src={finovaLogo} alt="Finova Bank" className="h-9 w-9 shrink-0 object-contain" />
           {!collapsed && (
             <div className="flex flex-col">
               <span className="font-semibold text-sm text-sidebar-foreground">Finova Bank</span>

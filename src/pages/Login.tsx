@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Lock, User, AlertCircle, Eye, EyeOff, Shield, Users } from "lucide-react";
+import finovaLogo from "@/assets/finova-logo.png";
 
 export default function Login() {
   const { role } = useParams<{ role: string }>();
@@ -37,9 +38,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <div className="w-full max-w-md animate-fade-in">
         <div className="text-center mb-8">
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground font-bold text-xl mb-4">
-            SV
-          </div>
+          <img src={finovaLogo} alt="Finova Bank" className="h-16 w-auto mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-foreground">Finova Bank</h1>
           <div className="flex items-center justify-center gap-2 mt-2">
             {isAdmin ? <Shield className="h-4 w-4 text-primary" /> : <Users className="h-4 w-4 text-primary" />}
