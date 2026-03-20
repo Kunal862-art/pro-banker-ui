@@ -11,7 +11,7 @@ export default function Index() {
           SV
         </div>
         <h1 className="text-3xl font-bold text-foreground tracking-tight mb-2" style={{ lineHeight: "1.1" }}>
-          SecureVault Bank
+          Finova Bank
         </h1>
         <p className="text-muted-foreground mb-10">
           Select your role to continue

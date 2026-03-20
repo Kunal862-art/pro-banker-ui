@@ -32,7 +32,7 @@ export default function Passbook() {
     { label: "Account Holder", value: user.fullName },
     { label: "Account Number", value: user.accountNumber },
     { label: "Account Type", value: "Savings" },
-    { label: "IFSC Code", value: "SVBL0001234" },
+    { label: "IFSC Code", value: "FNVA0001234" },
     { label: "Mobile Number", value: user.phone },
     { label: "Email", value: user.email },
     { label: "Address", value: user.address },
@@ -47,7 +47,7 @@ export default function Passbook() {
 <!DOCTYPE html>
 <html>
 <head>
-<title>SecureVault Bank - Passbook</title>
+<title>Finova Bank - Passbook</title>
 <style>
   @page { margin: 20mm; }
   body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e; margin: 0; padding: 0; }
@@ -69,7 +69,7 @@ export default function Passbook() {
   <div class="header">
     <div class="logo">SV</div>
     <div>
-      <div class="bank-name">SecureVault Bank</div>
+      <div class="bank-name">Finova Bank</div>
       <div class="bank-sub">Your Trusted Banking Partner</div>
     </div>
   </div>
@@ -80,7 +80,7 @@ export default function Passbook() {
   <div class="stamp">Issued on: ${new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric" })}</div>
   <div class="footer">
     This is a computer-generated document and does not require a physical signature.<br/>
-    SecureVault Bank • IFSC: SVBL0001234 • CIN: U00000MH2025PLC000000
+    Finova Bank • IFSC: FNVA0001234 • CIN: U00000MH2025PLC000000
   </div>
 </body>
 </html>`;
@@ -110,7 +110,7 @@ export default function Passbook() {
               SV
             </div>
             <h2 className="text-xl font-bold text-foreground">Digital Passbook</h2>
-            <p className="text-sm text-muted-foreground">SecureVault Bank</p>
+            <p className="text-sm text-muted-foreground">Finova Bank</p>
           </div>
         )}
 
@@ -121,7 +121,7 @@ export default function Passbook() {
               SV
             </div>
             <div>
-              <p className="text-primary-foreground font-semibold text-sm">SecureVault Bank</p>
+              <p className="text-primary-foreground font-semibold text-sm">Finova Bank</p>
               <p className="text-primary-foreground/70 text-xs">Your Trusted Banking Partner</p>
             </div>
           </div>

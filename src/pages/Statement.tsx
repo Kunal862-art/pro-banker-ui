@@ -13,7 +13,7 @@ export default function Statement() {
 
   const downloadPDF = () => {
     const lines = [
-      "SECUREVAULT BANK — ACCOUNT STATEMENT",
+      "FINOVA BANK — ACCOUNT STATEMENT",
       "=".repeat(50),
       `Account Holder: ${user.fullName}`,
       `Account Number: ${user.accountNumber}`,
